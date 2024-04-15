@@ -103,6 +103,10 @@ wrapWithErrorTracking(() => {
   });
 });
 
+window.addEventListener('unhandledrejection', async (event) => {
+  await captureError(event.reason);
+});
+
 async function wrapWithErrorTracking(fn) {
   try {
     fn();
