@@ -1,12 +1,233 @@
+:root {
+  --primary: #0032a0;
+  --secondary: #ff0001;
+  --pd-logo-color: #8f17d1;
+}
+
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  font-family: Helvetica;
+  font-family: "Circular Std", sans-serif;
   background: transparent;
 }
 
-.button-container {
+/* Personalization Fields - Velstar */
+
+.customiser-block {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+  padding: 16px;
+  background: white;
+}
+.customiser-block .summary {
+  padding: 1rem;
+  border: 1px solid var(--primary);
+  margin-top: 20px;
+  position: relative;
+  flex: 0 0 100%;
+}
+.customiser-block .summary .row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  font-family: Gilroy Regular, sans-serif;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 700;
+  letter-spacing: normal;
+  line-height: 2;
+  color: var(--primary);
+  border-bottom: 1px solid #e5e5e5;
+  margin-bottom: 0;
+}
+#customisation-buttons input {
+  display: none;
+}
+.customiser-row {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  flex-wrap: wrap;
+}
+.customiser-row + .customiser-row {
+  margin-top: 20px;
+}
+.customiser-button {
+  background-color: #fff;
+  border: 1px solid var(--primary);
+  color: var(--primary);
+  padding: 10px 30px;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: block;
+  font-family: Gilroy Regular, sans-serif;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 700;
+  letter-spacing: normal;
+  line-height: 1.2;
+  min-height: 44px;
+  text-align: center;
+  width: calc(50% - 12px);
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+.customiser-button.radio-custom {
+  background-color: #fff;
+  border: 1px solid var(--primary);
+  color: var(--primary);
+  padding: 10px 30px;
+}
+.customiser-button.radio-custom.flex-col {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 0;
+}
+.customiser-button.radio-custom.hollow {
+  background-color: #fff;
+  color: var(--primary);
+}
+.customiser-button.active,
+#customisation-buttons input:checked + label {
+  background-color: var(--secondary);
+  border: 1px solid var(--secondary);
+  color: #fff;
+}
+
+.customiser-button img {
+  max-width: 100%;
+}
+.customiser-options {
+  display: none;
+}
+.customiser-options.show {
+  display: flex;
+}
+.dialog#customiser-row {
+  display: none;
+}
+.dialog#customiser-row.show {
+  display: block;
+  margin-top: 1em;
+}
+.dialog #customiser-title,
+.dialog form#customiser-form p {
+  font-family: Gilroy Regular, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  text-transform: none;
+  line-height: 1.5;
+  color: var(--primary);
+  display: block;
+  letter-spacing: 0px;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  text-align: center;
+  width: 100%;
+  margin-bottom: 20px;
+  font-size: 18px;
+  text-transform: uppercase;
+}
+.dialog form#customiser-form {
+  padding: 1rem;
+  border: 1px solid var(--primary);
+  margin-top: 20px;
+  position: relative;
+}
+.dialog form#customiser-form p {
+  text-align: left;
+  font-size: 16px;
+  margin-bottom: 12px;
+}
+.dialog form#customiser-form input,
+.dialog form#customiser-form select {
+  padding: 17px 30px;
+  margin-bottom: 1rem;
+  width: 100%;
+  border: 1px solid var(--primary);
+  font-family: Gilroy Regular, sans-serif;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 700;
+  letter-spacing: normal;
+  line-height: 18px;
+  color: var(--primary);
+  background: #fff;
+  text-transform: uppercase;
+}
+.dialog form#customiser-form input::placeholder,
+.dialog form#customiser-form select::placeholder {
+  text-transform: none;
+}
+.dialog button {
+  border: none;
+  background: transparent;
+  color: var(--primary);
+  cursor: pointer;
+  width: 100%;
+  box-sizing: border-box;
+
+  cursor: pointer;
+  display: block;
+  font-family: Gilroy Regular, sans-serif;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 700;
+  letter-spacing: normal;
+  line-height: 1.2;
+  min-height: 44px;
+  padding: 10px 0;
+  text-align: center;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin: 0.5em 0;
+}
+
+.dialog button.confirm {
+  background: var(--secondary);
+  border-color: var(--secondary);
+  color: #fff;
+}
+.dialog button.confirm[disabled] {
+  border-color: #e5e5e5;
+  background: #e5e5e5;
+  color: #fff;
+}
+
+.add-to-cart {
+  border-radius: 4px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  outline: none;
+  border: none;
+  background: none;
+  color: white;
+  font-size: 18px;
+  background: black;
+  min-width: 100px;
+  width: calc(100% - 2em);
+  margin: 0 1em 1em;
+}
+
+#ringSizeInput,
+#initialsInput,
+#nameInput {
+  width: 100%;
+  padding: 5px;
+}
+
+/* Purple Dot */
+
+.hide {
+  display: none !important;
+}
+
+.pd-button-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -19,13 +240,18 @@
   display: none;
 }
 
-.button {
+#waitlist-dispatch-date {
+  margin-top: 8px;
+  margin-bottom: 5px;
+}
+
+.pd-button-container .button {
   display: none;
   padding: 15px;
   border-radius: 2px;
   box-shadow: none;
   border: none;
-  background: #7f81d6;
+  background: black;
   color: white;
   font-size: 1em;
   width: 100%;
@@ -37,19 +263,10 @@
 #in-stock-button {
 }
 
-#waitlist-dispatch-date {
-  margin-top: 8px;
-  margin-bottom: 5px;
-}
-
-:root {
-  --pd-logo-color: #8F17D1;
-}
-
 #pd-logo:before {
   display: inline-block;
   position: relative;
-  content: ' ';
+  content: " ";
   border-radius: 50%;
   width: 8px;
   height: 8px;

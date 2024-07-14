@@ -1,11 +1,129 @@
-<div class="button-container">
+<div class="container customiser-block">
+  <div id="customisation-buttons" class="customiser-row active">
+    <input
+      type="radio"
+      name="customiser"
+      value="Standard"
+      id="standard-product"
+      checked
+      onChange="showHidePersonalisedProduct()"
+    />
+    <label
+      for="standard-product"
+      class="standard-product customiser-button radio-custom"
+      ><span>Standard Kit</span></label
+    >
+    <input
+      type="radio"
+      name="customiser"
+      value="Personalised"
+      id="personalised-product"
+      onChange="showHidePersonalisedProduct()"
+    />
+    <label
+      for="personalised-product"
+      class="personalised-product customiser-button radio-custom"
+      ><span>Personalised Kit</span></label
+    >
+  </div>
+  <div class="customiser-row customiser-options">
+    <div
+      class="diy-product customiser-button radio-custom hollow flex-col"
+      onClick="showHidePersonalisationOptions(this)"
+    >
+      <img
+        src="https://shop.rangers.co.uk/cdn/shop/t/218/assets/customiser-diy_x75.png?v=138735156082436372321708594850"
+      />
+      <div class="name">Create your own</div>
+    </div>
+    <div
+      class="hero-product customiser-button radio-custom hollow flex-col"
+      onClick="showHidePersonalisationOptions(this)"
+    >
+      <img
+        src="//shop.rangers.co.uk/cdn/shop/t/218/assets/customiser-hero_x75.png?v=107468131904203752381708594850"
+      />
+      <div class="name">Select Player</div>
+    </div>
+    <div class="summary" style="display: none">
+      <div class="name row">
+        <div>NAME:</div>
+        <div class="value"></div>
+      </div>
+      <div class="number row">
+        <div>NUMBER:</div>
+        <div class="value"></div>
+      </div>
+    </div>
+  </div>
+  <div id="customiser-row" class="dialog">
+    <p id="customiser-title"></p>
+    <form id="customiser-form">
+      <div class="player-select hero-product">
+        <p>Choose a player</p>
+        <select name="player" onChange="showdialogConfirmButton()">
+          <option value="">Select a player</option>
+        </select>
+      </div>
+      <div class="customer-select diy-product">
+        <p>Set name and number</p>
+        <label aria-label="name"
+          ><input
+            name="name"
+            value=""
+            placeholder="Name"
+            autocapitalize="none"
+            autocomplete="off"
+            autocorrect="off"
+            spellcheck="false"
+        /></label>
+        <label aria-label="Number"
+          ><input
+            name="number"
+            type="number"
+            value=""
+            min="0"
+            max="99"
+            maxlength="2"
+            placeholder="Number"
+            autocapitalize="none"
+            autocomplete="off"
+            autocorrect="off"
+            spellcheck="false"
+        /></label>
+      </div>
+      <button disabled class="confirm">Confirm Selection</button>
+      <button class="close">Cancel</button>
+    </form>
+  </div>
+</div>
+<div class="container add-to-cart-container">
+  <button class="add-to-cart" onClick="addToCart()">Add to Bag</button>
+</div>
+
+<div class="pd-button-container">
   <button id="preorder-button" class="button">Pre-order</button>
   <button id="in-stock-button" class="button">Add to Bag</button>
   <button id="sold-out-button" class="button" disabled>Sold out</button>
   <div id="waitlist-dispatch-date"></div>
-  <div id="waitlist-info" style="text-align: center">Pre-order protected by 
-    <span id="pd-logo" style="display: inline-block;color: var(--pd-logo-color);">
-      Purple Dot 
+  <div id="waitlist-info" style="text-align: center">
+    Pre-order protected by
+    <span
+      id="pd-logo"
+      style="display: inline-block; color: var(--pd-logo-color)"
+    >
+      Purple Dot
     </span>
-    <div id="learn-more-link" style="text-decoration: underline; cursor: pointer; background: none; border: none;">Learn more</div></div>
+    <div
+      id="learn-more-link"
+      style="
+        text-decoration: underline;
+        cursor: pointer;
+        background: none;
+        border: none;
+      "
+    >
+      Learn more
+    </div>
+  </div>
 </div>
